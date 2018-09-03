@@ -7,14 +7,16 @@ var confighandlerTest	= require('clientlinker-flow-confighandler-test');
 describe('#confighandler', function()
 {
 	var linker = ClientLinker(
+	{
+		flows: ['confighandler'],
+		clients:
 		{
-			flows: ['confighandler'],
-			clients: {
-				client: {
-					confighandler: confighandlerTest.methods
-				}
+			client:
+			{
+				confighandler: confighandlerTest.methods
 			}
-		});
+		}
+	});
 
 	linker.flow('confighandler', require('../'));
 
