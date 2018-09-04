@@ -28,24 +28,24 @@ npm i clientlinker-flow-confighandler --save
 ```javascript
 var clientlinker = require('clientlinker');
 var linker = clientlinker({
-	flows: ['confighandler'],
-	clients: {
-		client: {
-			confighandler: {
-				clientHanlder: function(query, body, callback, options)
-				{
-					return Promise.resolve({result: {}});
-				},
-			}
-		}
-	}
+  flows: ['confighandler'],
+  clients: {
+    client: {
+      confighandler: {
+        clientHanlder: function(query, body, callback, options)
+        {
+          return Promise.resolve({result: {}});
+        },
+      }
+    }
+  }
 });
 
 linker.flow('confighandler', require('clientlinker-flow-confighandler'));
 
 // use
 linker.run('client.clientHanlder', null, {id: 13})
-	.then(function(){});
+  .then(function(){});
 ```
 
 
