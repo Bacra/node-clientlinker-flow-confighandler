@@ -1,12 +1,12 @@
 'use strict';
 
 var expect				= require('expect.js');
-var ClientLinker		= require('clientlinker');
+var clientlinker		= require('clientlinker');
 var confighandlerTest	= require('clientlinker-flow-confighandler-test');
 
 describe('#confighandler', function()
 {
-	var linker = ClientLinker(
+	var linker = clientlinker(
 	{
 		flows: ['confighandler'],
 		clients:

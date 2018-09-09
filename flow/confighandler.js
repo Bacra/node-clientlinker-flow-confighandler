@@ -11,6 +11,7 @@ module.exports = function confighandler(runtime, callback)
 
 	if (typeof handler == 'function')
 	{
+		if (typeof callback == 'object') callback = callback.toFuncCallback();
 		return handler(runtime.query, runtime.body, callback, runtime.options);
 	}
 	else
